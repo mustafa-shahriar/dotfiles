@@ -1,0 +1,29 @@
+import = [
+    # uncomment the flavour you want below:
+    #  "~/.config/alacritty/catppuccin-latte.toml"
+    # "~/.config/alacritty/catppuccin-frappe.toml"
+    "~/.config/alacritty/catppuccin-macchiato.toml"
+    # "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+# install JetBrains Mono font
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
+
+[font]
+size = 11
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Light"
+
+[font.offset]
+x = -1
+y = -1
+
+[window.padding]
+x = 3
+y = 0

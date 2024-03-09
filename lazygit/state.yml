@@ -1,0 +1,10 @@
+lastupdatecheck: 0
+recentrepos:
+- /home/mustafa/.config
+- /home/mustafa/.config/qtile
+- /home/mustafa/.config/nvim
+startuppopupversion: 5
+customcommandshistory:
+- q
+hidecommandlog: false
+ignorewhitespaceindiffview: false
