@@ -10,7 +10,7 @@ import random
 
 
 def status_bar(widgets):
-    return bar.Bar(widgets, 22, opacity=0.97)
+    return bar.Bar(widgets, 22, opacity=0.9)
 
 
 screens = [

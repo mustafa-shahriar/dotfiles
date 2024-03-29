@@ -16,27 +16,36 @@ config.window_padding = {
 local act = wezterm.action
 
 config.keys = {
-  { key = '{', mods = 'CTRL|SHIFT', action = act.MoveTabRelative(-1) },
-  { key = '}', mods = 'CTRL|SHIFT', action = act.MoveTabRelative(1) },
+  { key = '<', mods = 'SHIFT|ALT', action = act.ActivateTabRelative(-1) },
+  { key = '>', mods = 'SHIFT|ALT', action = act.ActivateTabRelative(1) },
     {
-    key = 't',
-    mods = 'CTRL',
+    key = 'n',
+    mods = 'SHIFT|ALT',
     action = act.SpawnTab 'CurrentPaneDomain',
   },
+  {
+    key = '"',
+    mods = 'SHIFT|ALT',
+    action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+  },
+  {
+    key = 'H',
+    mods = 'SHIFT|CTRL',
+    action = act.AdjustPaneSize { 'Left', 1 }
+   },
+   {
+    key = 'L',
+    mods = 'SHIFT|CTRL',
+    action = act.AdjustPaneSize { 'Right', 1 }
+    },
+    --{ key = 'H', mods='A', action = act.ActivatePaneDirection 'Left' },
+
+    --{ key = 'L', action = act.ActivatePaneDirection 'Right' },
+
 }
 
 config.colors = {
   tab_bar = {
-    compose_cursor = '#f0c6c6',
-    cursor_bg = '#f4dbd6',
-    cursor_border = '#f4dbd6',
-    cursor_fg = '#181926',
-    foreground = '#cad3f5',
-    scrollbar_thumb = '#5b6078',
-    selection_bg = '#5b6078',
-    selection_fg = '#cad3f5',
-    split = '#6e738d',
-    visual_bell = '#363a4f' ,
     active_tab = {
         bg_color = '#c6a0f6',
         fg_color = '#181926',

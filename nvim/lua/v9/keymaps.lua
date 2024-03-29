@@ -4,12 +4,15 @@ local global = vim.g
 global.mapleader = ' '
 global.maplocalleader = ' '
 
+
+--vim.api.nvim_set_keymap('n', '<C-L>', ':lua TmuxNavigateRight()<CR>', opts)
 -- split keymaps
 keymap.set('n', '<leader>v', ':vsplit<CR>', opts)
+keymap.set('t', '<C-[>', '<C-\\><C-n>', opts)
 
 -- Telescope keymaps
-keymap.set('n', '<C-p>', ':Telescope git_files<CR>', opts)
-keymap.set('n', '<leader>ff', ':Telescope find_files<CR>', opts)
+keymap.set('n', '<C-p>', ':Telescope find_files<CR>', opts)
+keymap.set('n', '<leader>ff', ':Telescope git_files<CR>', opts)
 keymap.set('n', '<leader>b', ':Telescope buffers<CR>', opts)
 keymap.set('n', '<leader>r', ':Telescope oldfiles<CR>', opts)
 keymap.set('n', '<leader>gr', ':Telescope live_grep<CR>', opts)
@@ -21,7 +24,6 @@ keymap.set('i', '<C-j>', '<Down>', opts)
 keymap.set('i', '<C-l>', '<Right>', opts)
 --keymap.set('i', '<C-h>', '<Left>', opts)
 keymap.set('i', '<C-k>', '<End>', opts) -- Map CTRL + k to go to the end of line in insert mode
-
 keymap.set("n", "<leader>e", vim.cmd.Ex)
 
 

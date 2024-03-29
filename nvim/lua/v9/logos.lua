@@ -52,7 +52,7 @@ return setmetatable({
     __index = function(logos, key)
         if key == 'random' then
             math.randomseed(os.time())
-            return logos[4]
+            return logos[math.random(#logos)]
         end
         return logos[4]
     end,

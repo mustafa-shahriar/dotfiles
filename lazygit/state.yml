@@ -1,8 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
-- /home/mustafa/.config
-- /home/mustafa/.config/qtile
-- /home/mustafa/.config/nvim
+- /home/mustafa/dotfiles
+- /home/mustafa/codecrafters-redis-go
 startuppopupversion: 5
 customcommandshistory:
 - q

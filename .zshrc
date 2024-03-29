@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
+export PATH=$PATH:/usr/local/go/bin
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -74,7 +74,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -107,8 +106,13 @@ bindkey '\t' end-of-line
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias vim="nvim"
+alias air="/home/mustafa/go/bin/air"
 
+source $HOME/.cargo/env
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export EDITOR=nvim
+export VISUAL="$EDITOR"
