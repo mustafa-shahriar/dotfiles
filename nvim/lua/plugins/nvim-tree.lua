@@ -1,4 +1,4 @@
-return {
+local config =  {
     {
         'nvim-tree/nvim-tree.lua',
         dependencies = {
@@ -42,3 +42,5 @@ return {
         end
     },
 }
+
+return {}

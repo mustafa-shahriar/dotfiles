@@ -4,6 +4,8 @@ local global = vim.g
 global.mapleader = ' '
 global.maplocalleader = ' '
 
+keymap.set('n', ',', ':cprev<CR>', opts)
+keymap.set('n', '.', ':cnext<CR>', opts)
 
 --vim.api.nvim_set_keymap('n', '<C-L>', ':lua TmuxNavigateRight()<CR>', opts)
 -- split keymaps
