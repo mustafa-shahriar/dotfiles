@@ -4,11 +4,13 @@
 from libqtile.config import Key
 from libqtile.command import lazy
 
-terminal = "alacritty"
+#terminal = "alacritty"
+terminal = "kitty"
 mod = "mod1"
+browser = "google-chrome-stable"
 
 keys = [
-    Key([mod], "c", lazy.spawn("brave-browser"), desc="open chrome"),
+    Key([mod], "c", lazy.spawn(browser), desc="open chrome"),
     Key([mod], "v", lazy.spawn("pavucontrol"), desc="open pavucontrol"),
     Key([mod], "o", lazy.spawn("obsidian"), desc="open obsidian"),
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Spawn a command using a prompt widget"),

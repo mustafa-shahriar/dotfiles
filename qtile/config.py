@@ -20,7 +20,7 @@ import subprocess
 @hook.subscribe.startup_once
 def run_every_startup():
     subprocess.Popen(["/usr/bin/redshift", "-l", "23.810331:23.810331", "-t", "3700:3700"])
-    subprocess.Popen(["picom"])
+    #subprocess.Popen(["picom"])
 
 
 main = None

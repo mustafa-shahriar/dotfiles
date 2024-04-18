@@ -1,4 +1,4 @@
-local config =  {
+local config = {
     'goolord/alpha-nvim',
     event = 'VimEnter',
     config = function()
@@ -198,4 +198,4 @@ local config =  {
     end
 }
 
-return {}
+return config

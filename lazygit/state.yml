@@ -2,6 +2,7 @@ lastupdatecheck: 0
 recentrepos:
 - /home/mustafa/dotfiles
 - /home/mustafa/codecrafters-redis-go
+- /home/mustafa/gitp
 startuppopupversion: 5
 customcommandshistory:
 - q
