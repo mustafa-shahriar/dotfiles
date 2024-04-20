@@ -1,10 +1,10 @@
-return {
+local config = {
     'akinsho/bufferline.nvim',
     dependencies = {
         'nvim-tree/nvim-web-devicons'
     },
     event = { 'BufReadPre', 'BufNewFile' },
-    config = function ()
+    config = function()
         local bufferline = require('bufferline')
         bufferline.setup({
             options = {
@@ -20,7 +20,7 @@ return {
                 hover = {
                     enabled = true,
                     delay = 0,
-                    reveal = {'close'}
+                    reveal = { 'close' }
                 },
                 indicator = {
                     style = 'icon'
@@ -29,3 +29,5 @@ return {
         })
     end
 }
+
+return config

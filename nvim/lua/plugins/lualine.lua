@@ -1,7 +1,7 @@
 return {
     'nvim-lualine/lualine.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
-    config = function ()
+    config = function()
         local status_ok, lualine = pcall(require, 'lualine')
         if not status_ok then
             return
@@ -13,7 +13,7 @@ return {
                 theme = 'auto',
             },
             sections = {
-                lualine_a = {'mode'},
+                lualine_a = { 'mode' },
                 lualine_b = {
                     {
                         'filename',

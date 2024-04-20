@@ -9,18 +9,14 @@ return {
 
         themery.setup({
             themes = {
-                {
-                    name = 'material',
-                    colorscheme = 'material',
-                    before = [[vim.g.material_style = 'darker']]
-                },
+                --{
+                --name = 'material',
+                --colorscheme = 'material',
+                --before = [[vim.g.material_style = 'darker']]
+                --},
                 {
                     name = 'vscode',
                     colorscheme = 'vscode',
-                },
-                {
-                    name = 'gruvbox',
-                    colorscheme = 'gruvbox-baby',
                 },
                 {
                     name = 'catppuccin',
@@ -31,13 +27,22 @@ return {
                     colorscheme = 'tokyonight'
                 },
                 {
-                    name = "Day",
-                    colorscheme = "kanagawa-lotus",
+                    name = "GithubDark",
+                    colorscheme = "github_dark",
                 },
                 {
-                    name = "Night",
-                    colorscheme = "kanagawa-dragon",
-                }
+                    name = "github_dark_dimmed",
+                    colorscheme = "github_dark_dimmed",
+                },
+
+                {
+                    name = "github_dark_default",
+                    colorscheme = "github_dark_default",
+                },
+                {
+                    name = "github_dark_colorblind",
+                    colorscheme = "github_dark_colorblind",
+                },
             },
             themeConfigFile = '~/.config/nvim/lua/v9/colorscheme.lua',
             livePreview = true,

@@ -8,6 +8,7 @@
   "conform.nvim": { "branch": "master", "commit": "a6965ac128eba75537ec2bc5ddd5d5e357062bdc" },
   "flash.nvim": { "branch": "main", "commit": "c92ecbff98fdc8770c283aa3934349e6889195dd" },
   "friendly-snippets": { "branch": "main", "commit": "8f5db6c5b691a6bbaa5dabd9afeb164ef8a06d04" },
+  "github-nvim-theme": { "branch": "main", "commit": "d92e1143e5aaa0d7df28a26dd8ee2102df2cadd8" },
   "gitsigns.nvim": { "branch": "main", "commit": "5a04466685008f29c71fa5ec25d421deb1c83fea" },
   "gruvbox-baby": { "branch": "main", "commit": "4f45f5182b986ea8099b8ad0207e07f1bc49a47f" },
   "hardtime.nvim": { "branch": "main", "commit": "6826c1fe8bebc63a6886833ca4ffed2fc6ec3382" },

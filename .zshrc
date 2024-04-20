@@ -109,6 +109,8 @@ bindkey '^y' end-of-line
 
 alias vim="nvim"
 alias air="/home/mustafa/go/bin/air"
+alias cd="z"
+alias ci="zi"
 
 source $HOME/.cargo/env
 

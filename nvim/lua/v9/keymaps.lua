@@ -20,6 +20,7 @@ keymap.set('n', '<leader>r', ':Telescope oldfiles<CR>', opts)
 keymap.set('n', '<leader>gr', ':Telescope live_grep<CR>', opts)
 keymap.set('n', '<leader>fj', ':Telescope help_tags<CR>', opts)
 keymap.set('n', '<leader>fz', ':Telescope current_buffer_fuzzy_find<CR>', opts)
+keymap.set('n', '<leader>h', ':Telescope help_tags<CR>', opts)
 
 keymap.set('i', '<C-j>', '<Down>', opts)
 --keymap.set('i', '<C-k>', '<Up>', opts)

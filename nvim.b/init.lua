@@ -4,9 +4,9 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 vim.opt.mouse = 'a'
 vim.opt.showmode = false
---vim.softtabstop = 4
---vim.tabstop = 4
---vim.shiftwidth = 4
+vim.softtabstop = 4
+vim.tabstop = 4
+vim.shiftwidth = 4
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.relativenumber = true
 vim.opt.breakindent = true
@@ -14,8 +14,8 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
-vim.opt.updatetime = 250
-vim.opt.timeoutlen = 300
+--vim.opt.updatetime = 250
+--vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.list = true
@@ -500,7 +500,7 @@ require('lazy').setup({
         -- languages here or re-enable it for the disabled ones.
         local disable_filetypes = { c = true, cpp = true }
         return {
-          timeout_ms = 500,
+          --timeout_ms = 500,
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
