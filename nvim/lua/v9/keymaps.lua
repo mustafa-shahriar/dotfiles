@@ -15,7 +15,7 @@ keymap.set('t', '<C-[>', '<C-\\><C-n>', opts)
 -- Telescope keymaps
 keymap.set('n', '<C-p>', ':Telescope find_files<CR>', opts)
 keymap.set('n', '<leader>ff', ':Telescope git_files<CR>', opts)
-keymap.set('n', '<leader>b', ':Telescope buffers<CR>', opts)
+keymap.set('n', '<leader><leader>', ':Telescope buffers<CR>', opts)
 keymap.set('n', '<leader>r', ':Telescope oldfiles<CR>', opts)
 keymap.set('n', '<leader>gr', ':Telescope live_grep<CR>', opts)
 keymap.set('n', '<leader>fj', ':Telescope help_tags<CR>', opts)

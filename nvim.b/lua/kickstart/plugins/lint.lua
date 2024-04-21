@@ -1,3 +1,4 @@
+local jsLinter = 'eslint_d'
 return {
 
   { -- Linting
@@ -5,10 +6,21 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local lint = require 'lint'
+      -- lint.linters_by_ft = {
+      --   markdown = { 'markdownlint' },
+      -- }
       lint.linters_by_ft = {
-        markdown = { 'markdownlint' },
+        javascript = { jsLinter },
       }
-
+      lint.linters_by_ft = {
+        typescript = { jsLinter },
+      }
+      lint.linters_by_ft = {
+        javascriptreact = { jsLinter },
+      }
+      lint.linters_by_ft = {
+        typescriptreact = { jsLinter },
+      }
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:
       -- lint.linters_by_ft = lint.linters_by_ft or {}

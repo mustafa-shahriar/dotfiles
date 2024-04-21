@@ -7,7 +7,8 @@ from libqtile.command import lazy
 #terminal = "alacritty"
 terminal = "kitty"
 mod = "mod1"
-browser = "google-chrome-stable"
+# browser = "google-chrome-stable"
+browser = "brave-browser"
 
 keys = [
     Key([mod], "c", lazy.spawn(browser), desc="open chrome"),

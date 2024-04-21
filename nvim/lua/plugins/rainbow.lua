@@ -1,4 +1,4 @@
-return {
+local config = {
     'HiPhish/rainbow-delimiters.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function ()
@@ -26,3 +26,5 @@ return {
         }
     end
 }
+
+return {}
