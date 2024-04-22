@@ -1,4 +1,4 @@
-return {
+local config = {
     'nvim-lualine/lualine.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
@@ -22,5 +22,7 @@ return {
                 },
             },
         })
-    end
+    end,
 }
+
+return {}
