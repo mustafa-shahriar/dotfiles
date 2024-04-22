@@ -16,7 +16,7 @@ keymap.set('t', '<C-[>', '<C-\\><C-n>', opts)
 keymap.set('n', '<C-p>', ':Telescope find_files<CR>', opts)
 keymap.set('n', '<leader>ff', ':Telescope git_files<CR>', opts)
 keymap.set('n', '<leader><leader>', ':Telescope buffers<CR>', opts)
-keymap.set('n', '<leader>r', ':Telescope oldfiles<CR>', opts)
+--keymap.set('n', '<leader>r', ':Telescope oldfiles<CR>', opts)
 keymap.set('n', '<leader>gr', ':Telescope live_grep<CR>', opts)
 keymap.set('n', '<leader>fj', ':Telescope help_tags<CR>', opts)
 keymap.set('n', '<leader>fz', ':Telescope current_buffer_fuzzy_find<CR>', opts)
@@ -27,8 +27,7 @@ keymap.set('i', '<C-j>', '<Down>', opts)
 keymap.set('i', '<C-l>', '<Right>', opts)
 --keymap.set('i', '<C-h>', '<Left>', opts)
 keymap.set('i', '<C-k>', '<End>', opts) -- Map CTRL + k to go to the end of line in insert mode
-keymap.set("n", "<leader>e", vim.cmd.Ex)
-
+keymap.set('n', '<leader>e', vim.cmd.Ex)
 
 -- make CTRL + C behave exactly the same as ESC
 keymap.set('i', '<C-c>', '<ESC>', opts)

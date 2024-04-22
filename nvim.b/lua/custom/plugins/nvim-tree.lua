@@ -43,4 +43,4 @@ local config = {
   },
 }
 
-return {}
+return config

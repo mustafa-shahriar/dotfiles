@@ -10,7 +10,7 @@ return {
             end
 
             neodev.setup()
-        end
+        end,
     },
     {
         'VonHeikemen/lsp-zero.nvim',
@@ -23,14 +23,14 @@ return {
                 'williamboman/mason.nvim',
                 build = function()
                     pcall(vim.cmd, 'MasonUpdate')
-                end
+                end,
             },
-            { 'williamboman/mason-lspconfig.nvim', },
+            { 'williamboman/mason-lspconfig.nvim' },
 
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'L3MON4D3/LuaSnip' },
-            { 'SmiteshP/nvim-navic' }
+            { 'SmiteshP/nvim-navic' },
         },
         config = function()
             local lsp = require('lsp-zero').preset({})
@@ -43,23 +43,60 @@ return {
                     navic.attach(client, bufnr)
                 end
 
-                vim.api.nvim_buf_set_keymap(bufnr, 'n', 'ca', '<cmd>lua vim.lsp.buf.code_action()<CR>',
-                    { noremap = true, silent = true })
+                vim.api.nvim_buf_set_keymap(
+                    bufnr,
+                    'n',
+                    'ca',
+                    '<cmd>lua vim.lsp.buf.code_action()<CR>',
+                    { noremap = true, silent = true }
+                )
+                vim.api.nvim_buf_set_keymap(
+                    bufnr,
+                    'n',
+                    '<leader>s',
+                    ':Telescope lsp_document_symbols<CR>',
+                    { noremap = true, silent = true }
+                )
 
-                vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>',
-                    { noremap = true, silent = true })
+                vim.api.nvim_buf_set_keymap(
+                    bufnr,
+                    'n',
+                    'K',
+                    '<cmd>lua vim.lsp.buf.hover()<CR>',
+                    { noremap = true, silent = true }
+                )
 
-                vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>gd',
-                    '<cmd>require("telescope.builtin").lsp_definitions()<CR>', { noremap = true, silent = true })
+                vim.api.nvim_buf_set_keymap(
+                    bufnr,
+                    'n',
+                    '<leader>gd',
+                    '<cmd>require("telescope.builtin").lsp_definitions()<CR>',
+                    { noremap = true, silent = true }
+                )
 
-                vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr',
-                    '<cmd>lua require("telescope.builtin").lsp_references()<CR>', { noremap = true, silent = true })
+                vim.api.nvim_buf_set_keymap(
+                    bufnr,
+                    'n',
+                    'gr',
+                    '<cmd>lua require("telescope.builtin").lsp_references()<CR>',
+                    { noremap = true, silent = true }
+                )
 
-                vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>D',
-                    '<cmd>lua require("telescope.builtin").lsp_type_definitions()<CR>', { noremap = true, silent = true })
+                vim.api.nvim_buf_set_keymap(
+                    bufnr,
+                    'n',
+                    '<leader>D',
+                    '<cmd>lua require("telescope.builtin").lsp_type_definitions()<CR>',
+                    { noremap = true, silent = true }
+                )
 
-                vim.api.nvim_buf_set_keymap(bufnr, 'n', 'rn', '<cmd>lua vim.lsp.buf.rename()<CR>',
-                    { noremap = true, silent = true })
+                vim.api.nvim_buf_set_keymap(
+                    bufnr,
+                    'n',
+                    'rn',
+                    '<cmd>lua vim.lsp.buf.rename()<CR>',
+                    { noremap = true, silent = true }
+                )
             end)
 
             require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
@@ -75,7 +112,7 @@ return {
                 'svelte',
                 'tailwindcss',
                 'docker_compose_language_service',
-                'dockerls'
+                'dockerls',
             })
 
             lsp.setup()
@@ -95,15 +132,15 @@ return {
                 mapping = {
                     ['<CR>'] = cmp.mapping.confirm({ select = false }),
                 },
-                window = {
-                    completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
-                },
+                -- window = {
+                --     completion = cmp.config.window.bordered(),
+                --     documentation = cmp.config.window.bordered(),
+                -- },
                 snippet = {
                     expand = function(args)
                         require('luasnip').lsp_expand(args.body)
-                    end
-                }
+                    end,
+                },
             })
 
             local ls = require('luasnip')
@@ -111,35 +148,28 @@ return {
             local t = ls.text_node
             local i = ls.insert_node
 
-            ls.add_snippets("go", {
-                ls.parser.parse_snippet(
-                    "iferr",
-                    "if err != nil {\n  return nil\n}"
-                ),
-
+            ls.add_snippets('go', {
+                ls.parser.parse_snippet('iferr', 'if err != nil {\n  return nil\n}'),
             })
-            ls.add_snippets("javascript", {
+            ls.add_snippets('javascript', {
                 ls.parser.parse_snippet(
-                    "rc",
+                    'rc',
                     "function ${1:name}() {\n    return(\n        '${1:name}'\n    )\n}\nexport default ${1:name}"
                 ),
-
             })
-            ls.add_snippets("typescript", {
+            ls.add_snippets('typescript', {
                 ls.parser.parse_snippet(
-                    "rc",
+                    'rc',
                     "function ${1:name}() {\n    return(\n        '${1:name}'\n    )\n}\nexport default ${1:name}"
                 ),
-
             })
-            ls.add_snippets("java", {
+            ls.add_snippets('java', {
                 ls.parser.parse_snippet(
-                    "pc",
-                    "public class ${1:name}{\n    public static void main(String[] args){\n    }\n}"
+                    'pc',
+                    'public class ${1:name}{\n    public static void main(String[] args){\n    }\n}'
                 ),
-
             })
-        end
+        end,
     },
     { 'saadparwaiz1/cmp_luasnip' },
     { 'rafamadriz/friendly-snippets' },
