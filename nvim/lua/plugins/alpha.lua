@@ -20,12 +20,12 @@ local config = {
         dashboard.section.header.val = header()
 
         dashboard.section.buttons.val = {
-            dashboard.button('f', '  Find file', ':Telescope find_files <CR>'),
-            dashboard.button('e', '  New file', ':ene <CR>'),
-            dashboard.button('r', '  Recently used files', ':Telescope oldfiles <CR>'),
-            dashboard.button('gr', '  Find text', ':Telescope live_grep <CR>'),
-            dashboard.button('n', '  Open file tree', ':NvimTreeOpen <CR>'),
-            dashboard.button('q', '  Quit Neovim', ':qa<CR>'),
+            -- dashboard.button('f', '  Find file', ':Telescope find_files <CR>'),
+            -- dashboard.button('e', '  New file', ':ene <CR>'),
+            -- dashboard.button('r', '  Recently used files', ':Telescope oldfiles <CR>'),
+            -- dashboard.button('gr', '  Find text', ':Telescope live_grep <CR>'),
+            -- dashboard.button('n', '  Open file tree', ':NvimTreeOpen <CR>'),
+            -- dashboard.button('q', '  Quit Neovim', ':qa<CR>'),
         }
 
         local v = vim.version()
@@ -59,9 +59,7 @@ local config = {
         dashboard.opts.opts.noautocmd = true
         alpha.setup(dashboard.opts)
 
-
         -- ALPHA LOLCAT ALPHA LOLCAT ALPHA LOLCAT --
-
 
         -- local opts = { noremap = true, silent = true }
         --
@@ -195,7 +193,7 @@ local config = {
         --     dashboard.section.buttons,
         --     { type = "padding", val = 1 },
         -- }
-    end
+    end,
 }
 
 return config

@@ -4,8 +4,9 @@ local global = vim.g
 global.mapleader = ' '
 global.maplocalleader = ' '
 
-keymap.set('n', ',', ':cprev<CR>', opts)
-keymap.set('n', '.', ':cnext<CR>', opts)
+--keymap.set('n', ',', ':cprev<CR>', opts)
+--keymap.set('n', '.', ':cnext<CR>', opts)
+keymap.set('n', '<Esc>', ':if &hlsearch | nohlsearch | endif<CR>', opts)
 
 --vim.api.nvim_set_keymap('n', '<C-L>', ':lua TmuxNavigateRight()<CR>', opts)
 -- split keymaps
@@ -27,7 +28,7 @@ keymap.set('i', '<C-j>', '<Down>', opts)
 keymap.set('i', '<C-l>', '<Right>', opts)
 --keymap.set('i', '<C-h>', '<Left>', opts)
 keymap.set('i', '<C-k>', '<End>', opts) -- Map CTRL + k to go to the end of line in insert mode
-keymap.set('n', '<leader>e', vim.cmd.Ex)
+--keymap.set('n', '<leader>e', vim.cmd.Ex)
 
 -- make CTRL + C behave exactly the same as ESC
 keymap.set('i', '<C-c>', '<ESC>', opts)
