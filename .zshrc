@@ -111,6 +111,7 @@ alias vim="nvim"
 alias air="/home/mustafa/go/bin/air"
 alias cd="z"
 alias ci="zi"
+alias t="tmux"
 
 source $HOME/.cargo/env
 
