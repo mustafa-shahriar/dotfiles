@@ -1,6 +1,5 @@
 local set = vim.opt
 
-set.guicursor = ''
 set.breakindent = true
 set.showmode = false
 set.cursorline = true

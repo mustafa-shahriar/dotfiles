@@ -26,4 +26,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.api.nvim_command('au VimEnter * set mouse=a')
-vim.api.nvim_command('au VimEnter * set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50')
