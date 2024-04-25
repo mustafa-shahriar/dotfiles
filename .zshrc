@@ -109,6 +109,7 @@ bindkey '^y' end-of-line
 
 alias vim="nvim"
 alias air="/home/mustafa/go/bin/air"
+alias gb="/home/mustafa/go/bin/go-blueprint"
 alias cd="z"
 alias ci="zi"
 alias t="tmux"
