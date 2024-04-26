@@ -3,6 +3,7 @@ require('v9.keymaps')
 require('v9.lazy')
 require('v9.colorscheme')
 require('v9.runcode')
+require("v9.templ")
 
 --------------------------------
 -- Function to navigate to the Tmux pane on the right

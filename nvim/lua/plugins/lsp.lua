@@ -105,11 +105,9 @@ return {
 
                 'pyright',
                 'lua_ls',
-                'clangd',
                 'tsserver',
                 'gopls',
                 'jdtls',
-                'svelte',
                 'tailwindcss',
                 'docker_compose_language_service',
                 'dockerls',
