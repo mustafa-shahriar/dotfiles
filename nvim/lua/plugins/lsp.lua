@@ -111,6 +111,7 @@ return {
                 'tailwindcss',
                 'docker_compose_language_service',
                 'dockerls',
+                'html'
             })
 
             lsp.setup()

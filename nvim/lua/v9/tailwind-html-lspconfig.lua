@@ -2,11 +2,11 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local lspconfig = require("lspconfig")
 
 
--- lspconfig.templ.setup {
---     cmd = { 'templ', 'server', '--stdio' }, -- Command to start the server
---     on_attach = on_attach,
---     capabilities = capabilities,
--- }
+lspconfig.templ.setup {
+    cmd = { 'templ', 'server', '--stdio' }, -- Command to start the server
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
 
 lspconfig.tailwindcss.setup({
     on_attach = on_attach,
