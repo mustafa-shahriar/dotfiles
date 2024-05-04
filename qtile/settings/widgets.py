@@ -6,9 +6,11 @@ from qtile_extras.widget import PulseVolumeExtra
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
 def base(fg='text', bg='dark'): 
+    colors['color1'] = '#303446'
+    colors['color2'] = '#232634'
     return {
-        'foreground': colors[fg],
-        'background': colors[bg]
+        'foreground': '#c6d0f5',
+        'background': colors[bg],
     }
 
 
@@ -86,9 +88,9 @@ primary_widgets = [
 
     #powerline('color3', 'color4'),
 
-    icon(bg="color1", text=''),  # Icon: nf-fa-feed
-    
-    widget.Net(**base(bg='color1'),format='{down:.0f}{down_suffix} ↓↑ {up:.0f}{up_suffix}'),
+    # icon(bg="color1", text=''),  # Icon: nf-fa-feed
+    # widget.Net(**base(bg='color1'),format='{down:.0f}{down_suffix} ↓↑ {up:.0f}{up_suffix}'),
+
     #powerline('color2', 'color3'),
     
     icon(bg="color2", text='󰍛'),  # Icon: nf-fa-feed
@@ -112,17 +114,17 @@ primary_widgets = [
         #bar_colour="#334148",
         hide_after=99999999,
         hide_interval=99999999,
-        bar_colour_loud="#3f575b",
-        bar_colour_mute="#3f575b",
-        bar_colour_normal="#3f575b",
+        bar_colour_loud="#949cbb",
+        bar_colour_mute="#949cbb",
+        bar_colour_normal="#949cbb",
     ),
 
     widget.Clock(**base(bg='color1'), format='%d/%m/%y'),
     widget.Clock(**base(bg='color2'), format='%I:%M:%S'),
 
-    widget.Systray(background=colors['dark'], padding=5),
-    widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
-    widget.KeyboardLayout(**base(bg="color1"),configured_keyboards=['en','ar']),
+    # widget.Systray(background=colors['dark'], padding=5),
+    # widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
+    # widget.KeyboardLayout(**base(bg="color1"),configured_keyboards=['en','ar']),
     powerline('dark', 'color2'),
     widget.QuickExit(**base(bg="color1") ,default_text="  ",fontsize="18"),
 
