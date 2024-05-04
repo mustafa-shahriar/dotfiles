@@ -54,7 +54,7 @@ def workspaces():
             highlight_method='block',
             urgent_alert_method='block',
             urgent_border=colors['urgent'],
-            this_current_screen_border=colors['focus'],
+            this_current_screen_border='#949cbb',
             this_screen_border=colors['grey'],
             other_current_screen_border=colors['dark'],
             other_screen_border=colors['dark'],
