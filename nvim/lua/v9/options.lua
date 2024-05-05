@@ -1,5 +1,7 @@
 local set = vim.opt
 
+set.undodir = os.getenv('HOME') .. '/.vim/undodir'
+set.undofile = true
 set.breakindent = true
 set.showmode = false
 set.cursorline = true
