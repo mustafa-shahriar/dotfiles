@@ -6,8 +6,8 @@ from qtile_extras.widget import PulseVolumeExtra
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
 def base(fg='text', bg='dark'): 
-    colors['color1'] = '#303446'
-    colors['color2'] = '#232634'
+    colors['color1'] = '#232634'
+    colors['color2'] = '#303446'
     return {
         'foreground': '#c6d0f5',
         'background': colors[bg],
