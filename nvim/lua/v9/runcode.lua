@@ -14,6 +14,7 @@ local runCode = function()
         js = 'node ' .. buff_name,
         ts = 'bun ' .. buff_name,
         lua = 'lua ' .. buff_name,
+        rs = 'cargo run',
     }
 
     if commands[lang] then
