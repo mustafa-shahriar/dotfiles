@@ -99,6 +99,8 @@ primary_widgets = [
     # widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
     # widget.KeyboardLayout(**base(bg="color1"),configured_keyboards=['en','ar']),
     separator(),
+    widget.Systray(background=colors['dark'], padding=5),
+    separator(),
     powerline('dark', 'color2'),
     separator(),
     widget.QuickExit(**base(bg="color1") ,default_text="  ",fontsize="18"),
