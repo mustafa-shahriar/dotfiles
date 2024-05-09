@@ -1,3 +1,4 @@
+local jsFormatter = 'biome'
 return { -- Autoformat
   'stevearc/conform.nvim',
   lazy = false,
@@ -30,10 +31,10 @@ return { -- Autoformat
       --
       -- You can use a sub-list to tell conform to run *until* a formatter
       -- is found.
-      javascript = { 'prettier' },
-      typescript = { 'prettier' },
-      javascriptreact = { 'prettier' },
-      typescriptreact = { 'prettier' },
+      javascript = { jsFormatter },
+      typescript = { jsFormatter },
+      javascriptreact = { jsFormatter },
+      typescriptreact = { jsFormatter },
     },
   },
 }

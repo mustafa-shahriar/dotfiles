@@ -1,8 +1,11 @@
 local set = vim.opt
 
-vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-set.guicursor = ''
+vim.g.mapleader = ' '
+set.undodir = os.getenv 'HOME' .. '/.vim/undodir'
+set.updatetime = 250
+set.timeoutlen = 300
+set.undofile = true
 set.breakindent = true
 set.showmode = false
 set.cursorline = true
@@ -29,10 +32,11 @@ set.expandtab = true
 set.shiftround = true
 set.formatoptions:remove { 'c', 'r', 'o' }
 set.mousemoveevent = true
---set.winbar = " %{%v:lua.vim.fn.expand('%F')%}  %{%v:lua.require'nvim-navic'.get_location()%}"
 set.clipboard = 'unnamedplus'
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+--set.winbar = " %{%v:lua.vim.fn.expand('%F')%}  %{%v:lua.require'nvim-navic'.get_location()%}"
+
+-- vim.opt.list = true
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- vim.g.mapleader = ' '
 -- vim.g.maplocalleader = ' '
