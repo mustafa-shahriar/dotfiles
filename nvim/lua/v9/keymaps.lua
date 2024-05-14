@@ -1,148 +1,61 @@
-local opts = { noremap = true, silent = true }
-local keymap = vim.keymap
-local global = vim.g
-global.mapleader = ' '
-global.maplocalleader = ' '
+local option = { noremap = true, silent = true }
 
---keymap.set('n', ',', ':cprev<CR>', opts)
---keymap.set('n', '.', ':cnext<CR>', opts)
-keymap.set('n', '<Esc>', ':if &hlsearch | nohlsearch | endif<CR>', opts)
+vim.keymap.set('i', '<C-Backspace>', '<C-w>', option)
+vim.keymap.set('n', '<C-a>', 'ggVG', option)
 
---vim.api.nvim_set_keymap('n', '<C-L>', ':lua TmuxNavigateRight()<CR>', opts)
--- split keymaps
-keymap.set('n', '<leader>v', ':vsplit<CR>', opts)
-keymap.set('t', '<C-[>', '<C-\\><C-n>', opts)
+vim.keymap.set('n', '<leader>h', ':lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>', option)
+vim.keymap.set('n', '<leader>v', ':vsplit<CR>', option)
+vim.keymap.set('n', '<TAB>', '>>', option)
+vim.keymap.set('n', '<S-TAB>', '<<', option)
+vim.keymap.set('v', '<TAB>', '<S->>gv', option)
+vim.keymap.set('v', '<S-TAB>', '<S-<>gv', option)
 
--- Telescope keymaps
-keymap.set('n', '<C-p>', ':Telescope find_files<CR>', opts)
-keymap.set('n', '<leader>ff', ':Telescope git_files<CR>', opts)
-keymap.set('n', '<leader><leader>', ':Telescope buffers<CR>', opts)
---keymap.set('n', '<leader>r', ':Telescope oldfiles<CR>', opts)
-keymap.set('n', '<leader>gr', ':Telescope live_grep<CR>', opts)
-keymap.set('n', '<leader>fj', ':Telescope help_tags<CR>', opts)
-keymap.set('n', '<leader>fz', ':Telescope current_buffer_fuzzy_find<CR>', opts)
-keymap.set('n', '<leader>h', ':Telescope help_tags<CR>', opts)
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', option)
 
-keymap.set('i', '<C-j>', '<Down>', opts)
---keymap.set('i', '<C-k>', '<Up>', opts)
-keymap.set('i', '<C-l>', '<Right>', opts)
---keymap.set('i', '<C-h>', '<Left>', opts)
-keymap.set('i', '<C-k>', '<End>', opts) -- Map CTRL + k to go to the end of line in insert mode
---keymap.set('n', '<leader>e', vim.cmd.Ex)
+vim.keymap.set('i', '<C-l>', '<Right>', option)
+vim.keymap.set('i', '<C-k>', '<End>', option) -- Map CTRL + k to go to the end of line in insert mode
 
--- make CTRL + C behave exactly the same as ESC
-keymap.set('i', '<C-c>', '<ESC>', opts)
+vim.keymap.set('n', '<leader>q', ':bd<CR>', option)
+vim.keymap.set('n', '<leader>w', ':w<CR>', option)
 
--- delete one word in insert mode (note that <C-h> sends the same ASCII escape sequence as <C-BS>)
-keymap.set('i', '<C-h>', '<C-w>', opts)
+vim.keymap.set('n', '<', ':bp<CR>', option)
+vim.keymap.set('n', '>', ':bn<CR>', option)
+-- vim.keymap.set('n', '<C-,', ':cprev<CR>', option)
+-- vim.keymap.set('n', '<C-.>', ':cnext<CR>', option)
 
--- remap ^ and $ to H and L, respectively
-keymap.set('n', 'H', '^', opts)
-keymap.set('n', 'L', '$', opts)
+vim.keymap.set('n', '<C-u>', ':UndotreeToggle<CR>', option)
 
--- open up lazy.nvim UI
-keymap.set('n', '<leader>l', ':Lazy<CR>', opts)
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", option)
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", option)
 
--- toggle undotree
-keymap.set('n', '<C-u>', ':UndotreeToggle<CR>', opts)
+vim.keymap.set('n', '<C-j>', '<C-d>', option)
+vim.keymap.set('n', '<C-k>', '<C-u>', option)
+vim.keymap.set('v', '<C-j>', '<C-d>', option)
+vim.keymap.set('v', '<C-k>', '<C-u>', option)
 
--- toggle nvim-tree [commented to reduce the use of filetree]
--- keymap.set('n', '<C-n>', ':NvimTreeFindFileToggle<CR>', opts)
+--nvim tree
+-- vim.keymap.set('n', '<C-n>', ':NvimTreeFindFileToggle<CR>', option)
 
--- unbind <C-d> for now
-keymap.set('n', '<C-d>', '<nop>', opts)
+--telescope
+vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>', option)
+vim.keymap.set('n', '<leader>ff', ':Telescope git_files<CR>', option)
+vim.keymap.set('n', '<leader><leader>', ':Telescope buffers<CR>', option)
+-- vim.keymap.set('n', '<leader>r', ':Telescope oldfiles<CR>', option)
+vim.keymap.set('n', '<leader>gr', ':Telescope live_grep<CR>', option)
+vim.keymap.set('n', '<leader>fj', ':Telescope help_tags<CR>', option)
+vim.keymap.set('n', '<leader>fz', ':Telescope current_buffer_fuzzy_find<CR>', option)
+vim.keymap.set('n', '<leader>t', ':Telescope colorscheme<CR>', option)
 
--- close the current buffer
-keymap.set('n', '<C-x>', ':bd<CR>', opts)
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', '<leader>d', ':Telescope diagnostics<CR>', { desc = 'Show diagnostic [E]rror messages' })
+--vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
--- quickly switch between buffers
-keymap.set('n', '<', ':bp<CR>', opts)
-keymap.set('n', '>', ':bn<CR>', opts)
+vim.keymap.set('t', '<C-[>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- quickly switch between windows
-keymap.set('n', '<C-l>', '<C-w>l', opts)
-keymap.set('n', '<C-h>', '<C-w>h', opts)
-
--- write to all buffers
-keymap.set('n', '<leader>w', ':wa<CR>', opts)
-
--- quit a single buffers
---keymap.set('n', '<leader>q', ':qa<CR>', opts)
-keymap.set('n', '<leader>q', ':bd<CR>', opts)
-
--- force quit all buffers
-keymap.set('n', '<leader>fq', ':qa!<CR>', opts)
-
--- clear search term when centering the cursor
-keymap.set('n', 'zz', 'zz:noh<CR>', opts)
-
--- toggle transparency
-keymap.set('n', '<C-t>', ':TransparentToggle<CR>', opts)
-
--- open up Themery
-keymap.set('n', '<leader>t', ':Themery<CR>', opts)
-
--- replace current word
-keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
--- make current file an executable
-keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', opts)
-
--- keep cursor at front when appending lines below
-keymap.set('n', 'J', 'mzJ`z', opts)
-
--- select entire file with CTRL + A
-keymap.set('n', '<C-a>', 'ggVG', opts)
-
--- indent and outdent lines quickly
-keymap.set('n', '<TAB>', '>>', opts)
-keymap.set('n', '<S-TAB>', '<<', opts)
-
--- search movement keeps cursor in middle
-keymap.set('n', 'n', 'nzzzv', opts)
-keymap.set('n', 'N', 'Nzzzv', opts)
-
--- vertical movement keeps cursor in middle
-keymap.set('n', '<C-j>', '<C-d>zz', opts)
-keymap.set('n', '<C-k>', '<C-u>zz', opts)
-
--- creates a new line below the cursor and goes back into normal mode
-keymap.set('n', '<CR>', 'o<Esc>', opts)
-
--- creates a new line above the cursor and goes back into normal mode
-keymap.set('n', '<A-CR>', 'O<Esc>', opts)
-
--- quick resizing of buffers
-keymap.set('n', '<C-up>', ':resize -2<cr>', opts)
-keymap.set('n', '<C-down>', ':resize +2<cr>', opts)
-keymap.set('n', '<C-left>', ':vertical resize -2<cr>', opts)
-keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
-
--- copy into system clipboard with CTRL + C
-keymap.set('v', '<C-c>', '"+y', opts)
-
--- copy into host system clipboard with <leader>y
-keymap.set('v', '<leader>y', '"*y', opts)
-
--- prevent x from copying over Vim clipboard
-keymap.set('n', 'x', '"_x', opts)
-
--- indent and outdent lines in visual mode
-keymap.set('v', '<TAB>', '<S->>gv', opts)
-keymap.set('v', '<S-TAB>', '<S-<>gv', opts)
-
--- the greatest remap ever (Primeagen)
-keymap.set('v', '<leader>p', '"_dP', opts)
-
--- move lines around
-keymap.set('v', 'J', ":m '>+1<CR>gv=gv", opts)
-keymap.set('v', 'K', ":m '<-2<CR>gv=gv", opts)
-
--- vertical movement keeps cursor in middle (visual mode)
-keymap.set('v', '<C-j>', '<C-d>zz', opts)
-keymap.set('v', '<C-k>', '<C-u>zz', opts)
-
--- prevent incrementing numbers in file (this is actually horrible)
-keymap.set('v', '<C-a>', 'ggVG', opts)
-
-keymap.set('v', '<C-d>', '"+ygvd', opts)
+-- Keybinds to make split navigation easier.
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+--vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+--vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
