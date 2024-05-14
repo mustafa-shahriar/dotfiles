@@ -2,6 +2,7 @@ local set = vim.opt
 
 vim.g.maplocalleader = ' '
 vim.g.mapleader = ' '
+set.pumheight = 10
 set.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 set.updatetime = 250
 set.timeoutlen = 300

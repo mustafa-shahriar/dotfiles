@@ -15,6 +15,7 @@ local runCode = function()
     ts = 'bun ' .. buff_name,
     lua = 'lua ' .. buff_name,
     rs = 'cargo run',
+    zig = 'zig run ' .. buff_name,
   }
 
   if commands[lang] then

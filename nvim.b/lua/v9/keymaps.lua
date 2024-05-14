@@ -20,8 +20,8 @@ vim.keymap.set('n', '<leader>w', ':w<CR>', option)
 
 vim.keymap.set('n', '<', ':bp<CR>', option)
 vim.keymap.set('n', '>', ':bn<CR>', option)
-vim.keymap.set('n', '<C-,', ':cprev<CR>', option)
-vim.keymap.set('n', '<C-.>', ':cnext<CR>', option)
+-- vim.keymap.set('n', '<C-,', ':cprev<CR>', option)
+-- vim.keymap.set('n', '<C-.>', ':cnext<CR>', option)
 
 vim.keymap.set('n', '<C-u>', ':UndotreeToggle<CR>', option)
 
