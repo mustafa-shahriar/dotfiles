@@ -1,6 +1,0 @@
-require 'v9.options'
-require 'v9.lazy'
-require 'v9.runcode'
-require 'v9.textyank'
-require 'v9.indent'
-require 'v9.keymaps'
