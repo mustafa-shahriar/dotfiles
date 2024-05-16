@@ -46,7 +46,7 @@ local config = { -- Autocompletion
                     luasnip.lsp_expand(args.body)
                 end,
             },
-            completion = { completeopt = 'menu,menuone,noinsert' },
+            completion = { completeopt = 'menu,menuone,noinsert,noselect' },
 
             -- For an understanding of why these mappings were
             -- chosen, you will need to read `:help ins-completion`
@@ -65,7 +65,7 @@ local config = { -- Autocompletion
                 -- Accept ([y]es) the completion.
                 --  This will auto-import if your LSP supports it.
                 --  This will expand snippets if the LSP sent a snippet.
-                ['<C-y>'] = cmp.mapping.confirm { select = true },
+                ['<CR>'] = cmp.mapping.confirm { select = true },
 
                 -- Manually trigger a completion from nvim-cmp.
                 --  Generally you don't need this, because nvim-cmp will display
