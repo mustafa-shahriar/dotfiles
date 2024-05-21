@@ -1,7 +1,7 @@
 return { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
-    branch = '0.1.x',
+    -- branch = '0.1.x',
     dependencies = {
         'nvim-lua/plenary.nvim',
         { -- If encountering errors, see telescope-fzf-native README for installation instructions
@@ -44,16 +44,16 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
         -- [[ Configure Telescope ]]
         -- See `:help telescope` and `:help telescope.setup()`
+
         require('telescope').setup {
             -- You can put your default mappings / updates / etc. in here
             --  All the info you're looking for is in `:help telescope.setup()`
-            --
-            -- defaults = {
-            --   mappings = {
-            --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-            --   },
-            -- },
-            -- pickers = {}
+            defaults = {
+                file_ignore_patterns = { 'node_modules' },
+                path_display = {
+                    'filename_first',
+                },
+            },
             extensions = {
                 ['ui-select'] = {
                     require('telescope.themes').get_dropdown(),
