@@ -30,8 +30,6 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", option)
 
 vim.keymap.set('n', '<C-j>', '<C-d>', option)
 vim.keymap.set('n', '<C-k>', '<C-u>', option)
-vim.keymap.set('v', '<C-j>', '<C-d>', option)
-vim.keymap.set('v', '<C-k>', '<C-u>', option)
 
 --nvim tree
 -- vim.keymap.set('n', '<C-n>', ':NvimTreeFindFileToggle<CR>', option)

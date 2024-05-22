@@ -155,8 +155,10 @@ local config = { -- LSP Configuration & Plugins
             --
             -- But for many setups, the LSP (`tsserver`) will work just fine
             tsserver = {
-                settings = require 'config.ts_server',
+                settings = require 'config.tsServer',
             },
+            -- jdtls = { config = require 'config.jdtls' },
+
             --
 
             lua_ls = {
