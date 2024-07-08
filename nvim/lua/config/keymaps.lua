@@ -2,6 +2,7 @@ local option = { noremap = true, silent = true }
 
 vim.keymap.set('i', '<C-Backspace>', '<C-w>', option)
 vim.keymap.set('n', '<C-a>', 'ggVG', option)
+vim.keymap.set('v', '<leader>p', '"_dP', option)
 
 vim.keymap.set('n', '<leader>h', ':lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>', option)
 vim.keymap.set('n', '<leader>v', ':vsplit<CR>', option)
@@ -32,7 +33,7 @@ vim.keymap.set('n', '<C-j>', '<C-d>', option)
 vim.keymap.set('n', '<C-k>', '<C-u>', option)
 
 --nvim tree
--- vim.keymap.set('n', '<C-n>', ':NvimTreeFindFileToggle<CR>', option)
+vim.keymap.set('n', '<C-n>', ':NvimTreeFindFileToggle<CR>', option)
 
 --telescope
 vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>', option)
