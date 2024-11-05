@@ -75,11 +75,11 @@ local config = { -- LSP Configuration & Plugins
 
                 -- Fuzzy find all the symbols in your current document.
                 --  Symbols are things like variables, functions, types, etc.
-                map('<leader>s', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+                map('<leader>sd', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
 
                 -- Fuzzy find all the symbols in your current workspace.
                 --  Similar to document symbols, except searches over your entire project.
-                -- map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+                map('<leader>sw', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
                 -- Rename the variable under your cursor.
                 --  Most Language Servers support renaming across files, etc.
@@ -154,7 +154,7 @@ local config = { -- LSP Configuration & Plugins
             --    https://github.com/pmizio/typescript-tools.nvim
             --
             -- But for many setups, the LSP (`tsserver`) will work just fine
-            tsserver = {
+            ts_ls = {
                 settings = require 'config.tsServer',
             },
             -- jdtls = { config = require 'config.jdtls' },
@@ -193,13 +193,15 @@ local config = { -- LSP Configuration & Plugins
             'stylua', -- Used to format Lua code
             'pyright',
             'lua_ls',
-            'tsserver',
+            'ts_ls',
             'gopls',
             'tailwindcss',
             'docker_compose_language_service',
             'dockerls',
         })
+
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+        require('lspconfig').gleam.setup {}
 
         require('mason-lspconfig').setup {
             handlers = {

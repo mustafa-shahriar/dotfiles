@@ -1,5 +1,6 @@
 local option = { noremap = true, silent = true }
 
+vim.keymap.set('n', '<leader>m', ':RenderMarkdown toggle<CR>', option)
 vim.keymap.set('i', '<C-Backspace>', '<C-w>', option)
 vim.keymap.set('n', '<C-a>', 'ggVG', option)
 vim.keymap.set('v', '<leader>p', '"_dP', option)
@@ -31,6 +32,8 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", option)
 
 vim.keymap.set('n', '<C-j>', '<C-d>', option)
 vim.keymap.set('n', '<C-k>', '<C-u>', option)
+vim.keymap.set('v', '<C-j>', '<C-d>', option)
+vim.keymap.set('v', '<C-k>', '<C-u>', option)
 
 --nvim tree
 vim.keymap.set('n', '<C-n>', ':NvimTreeFindFileToggle<CR>', option)
@@ -46,8 +49,6 @@ vim.keymap.set('n', '<leader>fz', ':Telescope current_buffer_fuzzy_find<CR>', op
 vim.keymap.set('n', '<leader>t', ':Telescope colorscheme<CR>', option)
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>d', ':Telescope diagnostics<CR>', { desc = 'Show diagnostic [E]rror messages' })
 --vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 

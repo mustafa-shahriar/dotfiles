@@ -5,7 +5,7 @@ config.color_scheme = "Catppuccin Macchiato"
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.font_size = 11
-config.font = wezterm.font("JetBrains Mono", { weight = "Light" })
+-- config.font = wezterm.font("Cascadia Mono", { weight = "Light" })
 config.window_padding = {
 	left = 2,
 	right = 2,
@@ -20,23 +20,18 @@ config.keys = {
 	{ key = ">", mods = "SHIFT|ALT", action = act.ActivateTabRelative(1) },
 	{ key = "N", mods = "SHIFT|ALT", action = act.SpawnTab("DefaultDomain") },
 	{
-		key = "n",
-		mods = "SHIFT|ALT",
-		action = act.SpawnTab("CurrentPaneDomain"),
-	},
-	{
 		key = '"',
 		mods = "SHIFT|ALT",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
-		key = "h",
-		mods = "CTRL",
+		key = "H",
+		mods = "SHIFT|ALT",
 		action = act.ActivatePaneDirection("Left"),
 	},
 	{
-		key = "l",
-		mods = "CTRL",
+		key = "L",
+		mods = "SHIFT|ALT",
 		action = act.ActivatePaneDirection("Right"),
 	},
 }

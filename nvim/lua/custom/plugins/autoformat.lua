@@ -1,4 +1,6 @@
 local jsFormatter = 'biome'
+local pyFormatter = 'ruff'
+local prettier = 'prettier'
 return { -- Autoformat
     'stevearc/conform.nvim',
     lazy = false,
@@ -26,16 +28,13 @@ return { -- Autoformat
         end,
         formatters_by_ft = {
             lua = { 'stylua' },
-            -- Conform can also run multiple formatters sequentially
-            -- python = { "isort", "black" },
-            --
-            -- You can use a sub-list to tell conform to run *until* a formatter
-            -- is found.
             javascript = { jsFormatter },
             typescript = { jsFormatter },
             javascriptreact = { jsFormatter },
             typescriptreact = { jsFormatter },
+            json = { prettier },
             xml = { 'xmlformat' },
+            python = { pyFormatter },
             -- java = { 'google-java-format' },
         },
     },
