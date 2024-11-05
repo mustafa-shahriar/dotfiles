@@ -10,7 +10,8 @@ pip install psutil
 ```
 
 ```
-/usr/share/xsessions
+cd /usr/share/xsessions
+touch qtile.desktop
 
 [Desktop Entry]
 Name=Qtile
