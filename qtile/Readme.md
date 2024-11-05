@@ -9,3 +9,14 @@ pip install qtile==0.24.0
 pip install psutil
 ```
 
+```
+/usr/share/xsessions
+
+[Desktop Entry]
+Name=Qtile
+Comment=This session logs you into Qtile
+Exec=/home/mustafa/.local/bin/qtile start
+Type=Application
+X-GDM-SessionRegisters=true
+Keywords=wm;tailing
+```
