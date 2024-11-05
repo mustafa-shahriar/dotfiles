@@ -7,6 +7,7 @@ for cpu and ram
 pip install qtile-extras==0.24.0
 pip install qtile==0.24.0
 pip install psutil
+sudo apt install redshift
 ```
 
 ```
