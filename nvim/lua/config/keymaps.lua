@@ -4,6 +4,13 @@ vim.keymap.set('n', '<leader>m', ':RenderMarkdown toggle<CR>', option)
 vim.keymap.set('i', '<C-Backspace>', '<C-w>', option)
 vim.keymap.set('n', '<C-a>', 'ggVG', option)
 vim.keymap.set('v', '<leader>p', '"_dP', option)
+vim.keymap.set('i', '<C-k>', function()
+    vim.snippet.jump(1)
+end, option)
+vim.keymap.set('v', '<C-k>', '<C-u>', option)
+vim.keymap.set('v', '<C-j>', '<C-d>', option)
+
+-- vim.api.nvim_create_user_command('Ut', 'UndotreeToggle', {})
 
 vim.keymap.set('n', '<leader>h', ':lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>', option)
 vim.keymap.set('n', '<leader>v', ':vsplit<CR>', option)
@@ -15,7 +22,7 @@ vim.keymap.set('v', '<S-TAB>', '<S-<>gv', option)
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', option)
 
 vim.keymap.set('i', '<C-l>', '<Right>', option)
-vim.keymap.set('i', '<C-k>', '<End>', option) -- Map CTRL + k to go to the end of line in insert mode
+-- vim.keymap.set('i', '<C-k>', '<End>', option) -- Map CTRL + k to go to the end of line in insert mode
 
 vim.keymap.set('n', '<leader>q', ':bd<CR>', option)
 vim.keymap.set('n', '<leader>w', ':w<CR>', option)
@@ -29,11 +36,6 @@ vim.keymap.set('n', '<C-u>', ':UndotreeToggle<CR>', option)
 
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", option)
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", option)
-
-vim.keymap.set('n', '<C-j>', '<C-d>', option)
-vim.keymap.set('n', '<C-k>', '<C-u>', option)
-vim.keymap.set('v', '<C-j>', '<C-d>', option)
-vim.keymap.set('v', '<C-k>', '<C-u>', option)
 
 --nvim tree
 vim.keymap.set('n', '<C-n>', ':NvimTreeFindFileToggle<CR>', option)
@@ -49,13 +51,14 @@ vim.keymap.set('n', '<leader>fz', ':Telescope current_buffer_fuzzy_find<CR>', op
 vim.keymap.set('n', '<leader>t', ':Telescope colorscheme<CR>', option)
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>d', ':Telescope diagnostics<CR>', { desc = 'Show diagnostic [E]rror messages' })
+vim.keymap.set('n', '<leader>d', ':Telescope diagnostics<CR>', option)
+vim.keymap.set('n', '<leader>e', ':lua vim.diagnostic.open_float(0, {scope="line"})<CR>')
 --vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
-vim.keymap.set('t', '<C-[>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<C-[>', '<C-\\><C-n>', option)
 
 -- Keybinds to make split navigation easier.
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
---vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
---vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', option)
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', option)
+vim.keymap.set('n', '<C-j>', '<C-d>', option)
+vim.keymap.set('n', '<C-k>', '<C-u>', option)

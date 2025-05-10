@@ -1,4 +1,4 @@
-return {
+local config = {
     {
         'windwp/nvim-autopairs',
         event = { 'InsertEnter' },
@@ -19,7 +19,7 @@ return {
                 return
             end
 
-            npairs.setup({
+            npairs.setup {
                 check_ts = true,
                 fast_wrap = {
                     map = '<M-q>',
@@ -30,15 +30,15 @@ return {
                     check_comma = true,
                     manual_position = false,
                     highlight = 'PmenuSel',
-                    highlight_grey = 'LineNr'
+                    highlight_grey = 'LineNr',
                 },
-            })
+            }
 
-            npairs.add_rules({
-                rule("'", "'", 'python'):with_pair(cond.before_text('f')),
-                rule("{", "}", 'python'):with_pair(cond.is_inside_quote()),
-            })
-        end
+            npairs.add_rules {
+                rule("'", "'", 'python'):with_pair(cond.before_text 'f'),
+                rule('{', '}', 'python'):with_pair(cond.is_inside_quote()),
+            }
+        end,
     },
     {
         'windwp/nvim-ts-autotag',
@@ -51,7 +51,9 @@ return {
                 return
             end
 
-            autotag.setup({})
-        end
-    }
+            autotag.setup {}
+        end,
+    },
 }
+
+return config

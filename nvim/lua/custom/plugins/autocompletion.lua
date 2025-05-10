@@ -110,4 +110,4 @@ local config = { -- Autocompletion
     end,
 }
 
-return config
+return {}

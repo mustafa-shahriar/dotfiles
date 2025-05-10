@@ -1,5 +1,5 @@
 local jsFormatter = 'biome'
-local pyFormatter = 'ruff'
+-- local pyFormatter = 'ruff'
 local prettier = 'prettier'
 return { -- Autoformat
     'stevearc/conform.nvim',
@@ -34,7 +34,7 @@ return { -- Autoformat
             typescriptreact = { jsFormatter },
             json = { prettier },
             xml = { 'xmlformat' },
-            python = { pyFormatter },
+            -- python = { pyFormatter },
             -- java = { 'google-java-format' },
         },
     },

@@ -1,4 +1,4 @@
-return {
+local config = {
     'stevearc/oil.nvim',
     event = 'VeryLazy',
     config = function()
@@ -34,3 +34,5 @@ return {
         }
     end,
 }
+
+return config

@@ -6,6 +6,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
+    -- 'cocopon/iceberg.vim',
     'mfussenegger/nvim-jdtls',
     'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
     -- "gc" to comment visual regions/lines
@@ -26,6 +27,7 @@ require('lazy').setup {
         'folke/tokyonight.nvim',
         priority = 1000, -- Make sure to load this before all the other start plugins.
         init = function()
+            -- vim.cmd.colorscheme 'iceberg'
             vim.cmd.colorscheme 'tokyonight-night'
 
             -- You can configure highlights by doing something like:

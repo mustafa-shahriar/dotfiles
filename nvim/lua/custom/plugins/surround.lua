@@ -1,4 +1,6 @@
-return {
+local config = {
     'tpope/vim-surround',
-    event = { 'BufReadPre', 'BufNewFile' }
+    event = { 'BufReadPre', 'BufNewFile' },
 }
+
+return {}
