@@ -1,27 +1,16 @@
+# 🔗 Dotfiles Symlink Script
+
+This script creates symbolic links from your `~/dotfiles` directory into appropriate locations like `~/.config/` or your home directory (`~`), based on the type of file or folder.
+
+## 📦 Usage
+
 ```bash
-ln -s /home/mustafa/dotfiles/alacritty ~/.config/
+./linkdot.sh <name>
 ```
-```bash
-ln -s /home/mustafa/dotfiles/kitty ~/.config/
+
+## 📦 Example
 ```
-```bash
-ln -s /home/mustafa/dotfiles/lazygit ~/.config/
-```
-```bash
-ln -s /home/mustafa/dotfiles/nvim ~/.config/
-```
-```bash
-ln -s /home/mustafa/dotfiles/picon ~/.config/
-```
-```bash
-ln -s /home/mustafa/dotfiles/qtile ~/.config/
-```
-```bash
-ln -s /home/mustafa/dotfiles/redshift ~/.config/
-```
-```bash
-ln -s /home/mustafa/dotfiles/tmux ~/.config/
-```
-```bash
-ln -s /home/mustafa/dotfiles/.zshrc /home/username/
+./linkdot.sh nvim        # Links ~/dotfiles/nvim → ~/.config/nvim
+./linkdot.sh alacritty   # Links ~/dotfiles/alacritty → ~/.config/alacritty
+./linkdot.sh .zshrc      # Links ~/dotfiles/.zshrc → ~/.zshrc
 ```
