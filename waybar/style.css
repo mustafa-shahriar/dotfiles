@@ -81,12 +81,13 @@ window#waybar {
     feather;
   font-weight: 900;
   font-size: 13pt;
-  color: #1793d1;
+  color: #c0caf5;
   border:none;
   border-radius: 15px;
 }
 
 #workspaces button.active {
+    color: #1793d1;
     background: #13131d; 
 }
 
