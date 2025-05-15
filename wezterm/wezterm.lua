@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
 local config = {}
 
+config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.color_scheme = "Catppuccin Macchiato"
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
