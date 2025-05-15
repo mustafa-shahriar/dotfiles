@@ -5,10 +5,11 @@ config.color_scheme = "Catppuccin Macchiato"
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.font_size = 11
--- config.font = wezterm.font("Cascadia Mono", { weight = "Light" })
+config.enable_wayland = true
+config.font = wezterm.font("Fira Code", { weight = "Medium" })
 config.window_padding = {
-	left = 2,
-	right = 2,
+	left = 0,
+	right = 0,
 	top = 0,
 	bottom = 0,
 }
@@ -22,7 +23,7 @@ config.keys = {
 	{
 		key = '"',
 		mods = "SHIFT|ALT",
-		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		key = "H",
@@ -35,6 +36,15 @@ config.keys = {
 		action = act.ActivatePaneDirection("Right"),
 	},
 }
+
+for i = 1, 8 do
+	-- ALT + number to move to that position
+	table.insert(config.keys, {
+		key = tostring(i),
+		mods = "ALT",
+		action = act.ActivateTab(i - 1),
+	})
+end
 
 config.colors = {
 	tab_bar = {
