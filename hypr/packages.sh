@@ -1,1 +1,2 @@
-sudo pacman -R wl-clip-persist gammastep
+sudo pacman -R wl-clip-persist 
+yay -S hyprsunset
