@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local config = {}
 
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
-config.color_scheme = "Catppuccin Macchiato"
+config.color_scheme = "tokyonight_night"
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.font_size = 11
@@ -46,50 +46,5 @@ for i = 1, 8 do
 		action = act.ActivateTab(i - 1),
 	})
 end
-
-config.colors = {
-	tab_bar = {
-		active_tab = {
-			bg_color = "#c6a0f6",
-			fg_color = "#181926",
-			intensity = "Normal",
-			underline = "None",
-			italic = false,
-			strikethrough = false,
-		},
-		inactive_tab = {
-			bg_color = "#1e2030",
-			fg_color = "#cad3f5",
-			intensity = "Normal",
-			italic = false,
-			strikethrough = false,
-			underline = "None",
-		},
-		inactive_tab_hover = {
-			bg_color = "#24273a",
-			fg_color = "#cad3f5",
-			intensity = "Normal",
-			italic = false,
-			strikethrough = false,
-			underline = "None",
-		},
-		new_tab = {
-			bg_color = "#363a4f",
-			fg_color = "#cad3f5",
-			intensity = "Normal",
-			italic = false,
-			strikethrough = false,
-			underline = "None",
-		},
-		new_tab_hover = {
-			bg_color = "#494d64",
-			fg_color = "#cad3f5",
-			intensity = "Normal",
-			italic = false,
-			strikethrough = false,
-			underline = "None",
-		},
-	},
-}
 
 return config
