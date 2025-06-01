@@ -204,16 +204,16 @@ local config = { -- LSP Configuration & Plugins
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
         require('lspconfig').gleam.setup {}
 
-        require('lspconfig').harper_ls.setup {
-            settings = {
-                ['harper-ls'] = {
-                    linters = {
-                        SentenceCapitalization = false,
-                        SpellCheck = false,
-                    },
-                },
-            },
-        }
+        -- require('lspconfig').harper_ls.setup {
+        --     settings = {
+        --         ['harper-ls'] = {
+        --             linters = {
+        --                 SentenceCapitalization = false,
+        --                 SpellCheck = false,
+        --             },
+        --         },
+        --     },
+        -- }
 
         require('mason-lspconfig').setup {
             handlers = {
