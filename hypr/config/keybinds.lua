@@ -17,6 +17,21 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. "+ SHIFT + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
+-- screenshots
+hl.bind(
+	"Print",
+	hl.dsp.exec_cmd(
+		'grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | dunstify "Screenshot of the region taken" -t 1000'
+	)
+)
+hl.bind(
+	"SHIFT + Print",
+	hl.dsp.exec_cmd(
+		'grim - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | dunstify "Screenshot of whole screen taken" -t 1000'
+	)
+)
+hl.bind("ALT + Tab", hl.dsp.window.fullscreen("maximized", "toggle"))
+
 local left = "h"
 local right = "l"
 local down = "j"
