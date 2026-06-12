@@ -1,3 +1,391 @@
-@import 'matugen/colors.css';
-@import 'Styles/notifications.css';
-@import 'Styles/central_control.css';
+/* @import 'matugen/colors.css'; */
+/* @import 'Styles/notifications.css'; */
+/* @import 'Styles/central_control.css'; */
+
+/* ── TokyoNight swaync ─────────────────────────────────────────────────── */
+/* Matches waybar palette:                                                  */
+/* bg: #1a1b26  surface: #24283b  overlay: #292e42  border: #3b4261        */
+/* fg: #a9b1d6  bright: #c0caf5   muted: #565f89                           */
+/* red: #f7768e  yellow: #e0af68  green: #9ece6a  cyan: #7dcfff            */
+/* magenta: #bb9af7  teal: #73daca  orange: #ff9e64                        */
+
+* {
+  font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", monospace;
+  font-size: 12px;
+  transition: all 0.15s ease;
+  border: none;
+  box-shadow: none;
+}
+
+/* ── Control center panel ──────────────────────────────────────────────── */
+.control-center {
+  background: rgba(26, 27, 38, 0.96);
+  border: 1px solid #3b4261;
+  border-radius: 8px;
+  padding: 8px;
+  color: #a9b1d6;
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.control-center-list-placeholder {
+  color: #565f89;
+  font-size: 12px;
+}
+
+/* ── Notification popup (floating) ────────────────────────────────────── */
+.notification-window {
+  background: transparent;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.notification-row {
+  background: transparent;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+  background: transparent;
+}
+
+.notification {
+  background: rgba(36, 40, 59, 0.97);
+  border: 1px solid #3b4261;
+  border-radius: 8px;
+  padding: 0;
+  color: #a9b1d6;
+}
+
+.notification.critical {
+  border-color: #f7768e;
+}
+
+.notification.low {
+  border-color: #292e42;
+}
+
+/* ── Notification content ──────────────────────────────────────────────── */
+.notification-content {
+  background: transparent;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.notification-default-action {
+  background: transparent;
+  border-radius: 8px 8px 0 0;
+  padding: 0;
+  color: #a9b1d6;
+}
+
+.notification-default-action:hover {
+  background: rgba(59, 66, 97, 0.3);
+}
+
+.notification-action {
+  background: #24283b;
+  border-top: 1px solid #3b4261;
+  border-radius: 0;
+  color: #7dcfff;
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+.notification-action:first-child {
+  border-radius: 0 0 0 8px;
+}
+
+.notification-action:last-child {
+  border-radius: 0 0 8px 0;
+  border-left: 1px solid #3b4261;
+}
+
+.notification-action:hover {
+  background: #292e42;
+  color: #c0caf5;
+}
+
+/* ── Notification text ─────────────────────────────────────────────────── */
+.app-name {
+  color: #bb9af7;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.time {
+  color: #565f89;
+  font-size: 11px;
+}
+
+.summary {
+  color: #c0caf5;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.body {
+  color: #a9b1d6;
+  font-size: 11px;
+}
+
+.body-image {
+  border-radius: 4px;
+}
+
+/* ── Close button ──────────────────────────────────────────────────────── */
+.close-button {
+  background: transparent;
+  color: #565f89;
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 11px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.close-button:hover {
+  background: rgba(247, 118, 142, 0.15);
+  color: #f7768e;
+}
+
+/* ── Widget: title ─────────────────────────────────────────────────────── */
+.widget-title {
+  background: transparent;
+  padding: 6px 4px 8px;
+  border-bottom: 1px solid #292e42;
+  margin-bottom: 6px;
+}
+
+.widget-title > label {
+  color: #c0caf5;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.widget-title > button {
+  background: #24283b;
+  border: 1px solid #3b4261;
+  border-radius: 4px;
+  color: #565f89;
+  font-size: 11px;
+  padding: 2px 8px;
+}
+
+.widget-title > button:hover {
+  background: #292e42;
+  color: #f7768e;
+  border-color: #f7768e;
+}
+
+/* ── Widget: DND ───────────────────────────────────────────────────────── */
+.widget-dnd {
+  background: #24283b;
+  border: 1px solid #3b4261;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+}
+
+.widget-dnd > switch {
+  background: #292e42;
+  border: 1px solid #3b4261;
+  border-radius: 10px;
+}
+
+.widget-dnd > switch:checked {
+  background: #bb9af7;
+  border-color: #bb9af7;
+}
+
+.widget-dnd > switch slider {
+  background: #c0caf5;
+  border-radius: 10px;
+  min-width: 14px;
+  min-height: 14px;
+}
+
+.widget-dnd > label {
+  color: #a9b1d6;
+  font-size: 12px;
+}
+
+/* ── Widget: volume ────────────────────────────────────────────────────── */
+.widget-volume {
+  background: #24283b;
+  border: 1px solid #3b4261;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  color: #73daca;
+}
+
+.widget-volume > box > button {
+  background: transparent;
+  color: #73daca;
+  padding: 0 6px;
+  font-size: 14px;
+}
+
+.widget-volume > box > button:hover {
+  color: #7dcfff;
+}
+
+.widget-volume scale trough {
+  background: #292e42;
+  border-radius: 4px;
+  min-height: 4px;
+}
+
+.widget-volume scale highlight {
+  background: #73daca;
+  border-radius: 4px;
+}
+
+.widget-volume scale slider {
+  background: #c0caf5;
+  border-radius: 50%;
+  min-width: 12px;
+  min-height: 12px;
+  margin: -4px 0;
+}
+
+/* ── Widget: backlight ─────────────────────────────────────────────────── */
+.widget-backlight {
+  background: #24283b;
+  border: 1px solid #3b4261;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  color: #e0af68;
+}
+
+.widget-backlight scale trough {
+  background: #292e42;
+  border-radius: 4px;
+  min-height: 4px;
+}
+
+.widget-backlight scale highlight {
+  background: #e0af68;
+  border-radius: 4px;
+}
+
+.widget-backlight scale slider {
+  background: #c0caf5;
+  border-radius: 50%;
+  min-width: 12px;
+  min-height: 12px;
+  margin: -4px 0;
+}
+
+/* ── Widget: mpris ─────────────────────────────────────────────────────── */
+.widget-mpris {
+  background: #24283b;
+  border: 1px solid #3b4261;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 6px;
+}
+
+.widget-mpris-album-art {
+  border-radius: 6px;
+}
+
+.widget-mpris-player {
+  background: transparent;
+  padding: 4px;
+}
+
+.widget-mpris-title {
+  color: #c0caf5;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.widget-mpris-subtitle {
+  color: #565f89;
+  font-size: 11px;
+}
+
+.widget-mpris > box > button,
+.widget-mpris-player > box > button {
+  background: transparent;
+  color: #a9b1d6;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 14px;
+}
+
+.widget-mpris > box > button:hover,
+.widget-mpris-player > box > button:hover {
+  background: #292e42;
+  color: #7dcfff;
+}
+
+/* ── Widget: buttons-grid ──────────────────────────────────────────────── */
+.widget-buttons-grid {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 6px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  background: #24283b;
+  border: 1px solid #3b4261;
+  border-radius: 6px;
+  color: #a9b1d6;
+  padding: 8px;
+  margin: 2px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: #292e42;
+  color: #c0caf5;
+  border-color: #565f89;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.active {
+  background: rgba(187, 154, 247, 0.15);
+  border-color: #bb9af7;
+  color: #bb9af7;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+scrollbar {
+  background: transparent;
+  border-radius: 4px;
+}
+
+scrollbar slider {
+  background: #3b4261;
+  border-radius: 4px;
+  min-width: 4px;
+  min-height: 4px;
+}
+
+scrollbar slider:hover {
+  background: #565f89;
+}
+
+/* ── Image in notification ─────────────────────────────────────────────── */
+.notification-top-image-source {
+  border-radius: 6px;
+}
+
+/* ── Urgency colors ────────────────────────────────────────────────────── */
+.critical > .notification-content {
+  border-left: 2px solid #f7768e;
+}
+
+.low > .notification-content {
+  border-left: 2px solid #565f89;
+}
+
+.normal > .notification-content {
+  border-left: 2px solid #7dcfff;
+}
